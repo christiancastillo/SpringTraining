@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ public class WebServicesController {
 	}
 	
 	@RequestMapping(value = "/book/{title}", method = RequestMethod.GET)
+	@Cacheable (value = "book", key = "#title") //valores en caché
 	public BookModel findBookByTitle(@PathVariable String title) {
 		BookModel insertedBook = repository.findByTitle(title);
 		return insertedBook;
