@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Pagina de inicio</title>
+</head>
+<body>
+	<h1>Inicio</h1>
+	<p th:text="${mensaje}"></p> <!-- Se recupera la llave del controlador -->
+	<p th:text="${saludo}"></p>
+	
+	<div th:if="${personas != null and !personas.empty}">
+	<table>
+		<tr>
+			<th>Nombre: </th>
+			<th>Apellido: </th>
+			<th>Email: </th>					
+		</tr>					
+		<tr th:each="persona : ${personas}">
+			<td th:text="${}"></td>
+		</tr>
+	</table>
+	
+	<br/>
+	Nombre: <span th:text = "${personaNombre}">Nombre</span>	
+	<br/>
+	Apellido: <span th:text = "${personaApellido}"></span>
+	<br/>
+	Telefono: <span th:text = "${personaTelefono}"></span>
+	</div>
+	<div th:if="${personas==null or personas.empty}">
+		La lista de personas esta vacia!!
+	</div>
+	
+</body>
+</html>
