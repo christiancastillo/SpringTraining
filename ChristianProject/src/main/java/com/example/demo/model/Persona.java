@@ -1,6 +1,9 @@
 package com.example.demo.model;
 
 public class Persona {
+	
+	public Persona() {} //requisito para hacer un bean
+	
 	//En el modelo se definen los atributos para lo que se va a llamar e inyectar en las vistas
 	public String getNombre() {
 		return nombre;
