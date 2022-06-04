@@ -6,10 +6,10 @@
 </head>
 <body>
 	<h1>Formulario</h1>
-	<form action="#" th:action="@{/ejemplopost/addPersona}" th:object="${persona}">
-		<p><input type="text" placeholder="Nombre" th:field="*${nombre}"></p>
-		<p><input type="number" placeholder="Telefono" th:field="*${telefono}"></p>
-		<p><input type="submit" placeholder="Enviar" th:field="*${nombre}"></p>
+	<form action="#" th:action="@{/ejemploPost/addPersona}" th:object="${persona}" method="post">
+		<p><input type="text" placeholder="Nombre" th:field="*{nombre}"></p>
+		<p><input type="number" placeholder="Telefono" th:field="*{telefono}"></p>
+		<p><input type="submit" value="enviar"></p>
 	</form>
 </body>
 </html>
