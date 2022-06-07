@@ -14,6 +14,13 @@ import com.example.demo.model.Persona;
 @RequestMapping("/ejemploPost")
 public class PostController {
 	
+	//Forma para hacer REDIRECCION #1:
+	
+	@GetMapping("/")
+	public String redirect1() {
+		return "redirect:/ejemploPost/form";
+	}
+	
 	@GetMapping("/form")
 	public String form(Model model) {
 		model.addAttribute("persona", new Persona());
