@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Telefono</th>
+				<th>Correo</th>
+			</tr>			
+		</thead>
+		
+		<tbody th:each="personaentity : ${usuarios}">
+			<tr>
+				<th th:text="${usuarios.nombre}"></th>
+				<th th:text="${usuarios.apellidos}"></th>
+				<th th:text="${usuarios.telefono}"></th>
+				<th th:text="${usuarios.correo}"></th>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

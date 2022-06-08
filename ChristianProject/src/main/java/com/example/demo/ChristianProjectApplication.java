@@ -10,5 +10,4 @@ public class ChristianProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ChristianProjectApplication.class, args);
 	}
-
 }
