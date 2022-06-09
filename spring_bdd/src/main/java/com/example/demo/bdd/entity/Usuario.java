@@ -6,16 +6,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
+@Entity //plantilla para generar tablas en bdd
 @Table(name = "usuario")
 public class Usuario {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue //spring genera automaticamente el id
 	@Column(name = "id")
 	private int id;
 
-	@Column(name = "nombre")
+	@Column(name = "nombre") //definicion para la columna de la tabla
 	private String nombre;
 	@Column(name = "apellidos")
 	private String apellidos;

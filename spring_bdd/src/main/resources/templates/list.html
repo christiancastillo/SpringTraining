@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Telefono</th>
+				<th>Correo</th>
+			</tr>			
+		</thead>
+		<!-- Recorrido de la lista de usuarios -->
+		<tbody th:each="usuario : ${usuarios}">
+			<tr>
+				<th th:text="${usuario.nombre}"></th>
+				<th th:text="${usuario.apellidos}"></th>
+				<th th:text="${usuario.telefono}"></th>
+				<th th:text="${usuario.correo}"></th>
+			</tr>
+		</tbody>
+	</table>
+	
+	<!-- en th:action se define el path que se definio en el controlador @PostMapping("/addusers") -->
+	<!-- En th:object se define el objeto creado en controlador @GetMapping("/list") -->
+	<form action="#" th:action="@{/user/addusers}" th:object="${user}" method="POST">
+		<p><input type="text" placeholder="Nombre" th:field="*{nombre}"/></p>
+		<p><input type="text" placeholder="Apellidos" th:field="*{apellidos}"/></p>
+		<p><input type="text" placeholder="Telefono" th:field="*{telefono}"/></p>
+		<p><input type="text" placeholder="Correo" th:field="*{correo}"/></p>
+		<p><input type="submit" value="enviar"/></p>
+	</form>
+
+</body>
+</html>
