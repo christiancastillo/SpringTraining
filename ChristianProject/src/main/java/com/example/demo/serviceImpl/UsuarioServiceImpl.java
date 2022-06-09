@@ -27,5 +27,11 @@ public class UsuarioServiceImpl implements UsuarioService{
 		// TODO Auto-generated method stub
 		return (PersonaEntity) usuarioRepository.save(usuario);
 	}
+
+	@Override
+	public Object addUsuario(Object usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

@@ -15,12 +15,12 @@
 			</tr>			
 		</thead>
 		
-		<tbody th:each="personaentity : ${usuarios}">
+		<tbody th:each="usuario : ${usuarios}">
 			<tr>
-				<th th:text="${usuarios.nombre}"></th>
-				<th th:text="${usuarios.apellidos}"></th>
-				<th th:text="${usuarios.telefono}"></th>
-				<th th:text="${usuarios.correo}"></th>
+				<th th:text="${usuario.nombre}"></th>
+				<th th:text="${usuario.apellidos}"></th>
+				<th th:text="${usuario.telefono}"></th>
+				<th th:text="${usuario.correo}"></th>
 			</tr>
 		</tbody>
 	</table>
