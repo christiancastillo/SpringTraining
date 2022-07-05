@@ -19,7 +19,7 @@ public class LoginController {
 	}
 	
 	@GetMapping("/login")
-	public String login(Model model, @RequestParam(name="error")String error) {
+	public String login(Model model, @RequestParam(name="error", required=false)String error) {
 		
 		model.addAttribute("error", error);
 		model.addAttribute("credenciales", new Credenciales());
@@ -31,7 +31,7 @@ public class LoginController {
 		if(credenciales.getNombre().equals("paco") && credenciales.getPass().equals("234")) {
 			return "users"; //regresa la vista users
 		} else {
-			return "redirect:/login"; //redirecciona al login para que se logee de nuevo, con parametro error
+			return "redirect:/login?error"; //redirecciona al login para que se logee de nuevo, con parametro error
 		}
 	}
 	
