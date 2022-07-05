@@ -10,9 +10,11 @@ import javax.persistence.Table;
 @Table(name="usuario")
 public class Usuarios {
 	
+	
+	//DEFINIMOS ESTRUCTURA DE TABLA
 	@Id
-	@GeneratedValue
-	@Column(name="id")
+	@GeneratedValue //autoincremental
+	@Column(name="id") 
 	private int id;
 	@Column(name="nombre")
 	private String nombre;

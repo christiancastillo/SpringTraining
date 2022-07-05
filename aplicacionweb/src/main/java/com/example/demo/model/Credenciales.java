@@ -1,16 +1,14 @@
 package com.example.demo.model;
 
+
+//Modelo
 public class Credenciales {
 	
 	private String nombre;
 	private String pass;
-	public Credenciales() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
-	
-	
+	public Credenciales() {}
+		
 	public Credenciales(String nombre, String pass) {
 		super();
 		this.nombre = nombre;

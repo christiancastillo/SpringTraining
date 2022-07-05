@@ -12,13 +12,16 @@
 <body>
     <div class="container">    
 
+		<!-- en th:action se define la funcion check (de clase Credenciales) de postMapping check -->
 		<form class="form-signin" th:action=@{/check} th:object=${credenciales} method="POST">      
 	        <h2 class="form-signin-heading"> Login </h2>
 	        <label for="inputEmail" class="sr-only"> Usuario</label>
+	        <!-- th:field recoge datos para mandarlos a la clase modelo -->
 	        <input type="text" id="inputUsername" class="form-control" placeholder="Usuario" th:field="*{nombre}"/>
 	        <label for="inputPassword" class="sr-only"> Contraseña </label>
 	        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" th:field="*{pass}"/>
 	        
+	        <!-- Ingresamos un mensaje de error	 -->
 	        <div th:if="${error != null}" class="alert alert-danger" role="alert">Credenciales incorrectas!!</div>
 	        
 	        <button class="btn btn-lg btn-primary btn-block" type="submit">

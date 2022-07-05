@@ -9,15 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.Credenciales;
 
-/*
- * Repaso: no redirige a /login.html
- * https://www.youtube.com/watch?v=15sit3XQNbY&list=PLz8JVd0sHx7p7bqv9kGANmpMaSw9tYoiv&index=14
- * */
 
 @Controller
 public class LoginController {
 	
-	@GetMapping("/")
+	@GetMapping("/") //Redirige al LOGIN
 	public String redirectLogin() {
 		return "redirect:/login";
 	}
@@ -27,15 +23,15 @@ public class LoginController {
 		
 		model.addAttribute("error", error);
 		model.addAttribute("credenciales", new Credenciales());
-		return "login";
+		return "login"; //regresa login.html
 	}
 	
 	@PostMapping("/check")
 	public String check(@ModelAttribute(name="credenciales") Credenciales credenciales) {
 		if(credenciales.getNombre().equals("paco") && credenciales.getPass().equals("234")) {
-			return "users";
+			return "users"; //regresa la vista users
 		} else {
-			return "redirect:/login?error";
+			return "redirect:/login"; //redirecciona al login para que se logee de nuevo, con parametro error
 		}
 	}
 	
